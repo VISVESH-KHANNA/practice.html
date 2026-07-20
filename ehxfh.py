@@ -17,6 +17,10 @@ def f1():
                 rec = [d1,name,price]
                 file.writerow(rec)
 
+
+                if input("press 'x'to exit ").lower() == 'x':
+                    break
+
         except :
             print("OOPS made mistake while entering input")
             d1 = c
@@ -28,10 +32,13 @@ def f1():
 
         finally:
             print("thanks for using")
-            def f2():
-                with open("test.csv","r") as db:
-                    file = csv.writer(db)
-                    
+            with open("test.csv","r") as db:
+                file = csv.reader(db)
+                
 
-                    for i in file:
-                        print(i)
+                for i in file:
+                    print(i)
+
+        
+
+f1()
